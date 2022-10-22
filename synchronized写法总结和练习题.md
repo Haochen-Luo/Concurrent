@@ -105,7 +105,7 @@ class Number{
 ```
 
 ### 情况二
-这里Number1的a()是锁类对象，而b()中锁的是对象number12，所以不存在加锁。又因为1有sleep,所以运行结果永远是2先1后
+这里Number1的a()是锁类对象，而b()中锁的是对象number12，所以不存在互斥。又因为1有sleep,所以运行结果永远是2先1后
 ```java
 Number1 number11 = new Number1();
         Number1 number12 = new Number1();
@@ -138,7 +138,7 @@ class Number1{
 ```
 
 ### 情况三
-这里n1,n2对应都是Number2的类对象，所以加锁成功。和情形一一样
+这里n1,n2对应都是Number2的类对象，所以存在互斥。和情形一一样
 ```java
 //把main里换成下面这段。
  Number2 n1 = new Number2();
