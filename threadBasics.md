@@ -12,3 +12,9 @@ public class startDemo {
     }
 }
 ```
+Output
+```
+NEW
+RUNNABLE
+startingt1
+```
