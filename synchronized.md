@@ -1,8 +1,8 @@
 ### 经典并发错误及解决
-
+- 两个线程共享count变量，进行相同数目的count++和count--，预期结果是不变的，但是结果会错误
 - 错误原因: count++和count--并不是原子操作
 
-没有代码，共享count变量，结果会错误
+
 ```java
 public class ObjectLockdemo {
 
