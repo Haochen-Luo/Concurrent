@@ -97,3 +97,9 @@ class Number{
 21:34:50.446 [Thread-0] DEBUG main - begin
 21:34:51.463 [Thread-0] DEBUG number - 1
 ```
+```
+21:56:37.849 [Thread-1] DEBUG main - begin
+21:56:37.849 [Thread-0] DEBUG main - begin
+21:56:37.853 [Thread-1] DEBUG number - 2
+21:56:38.861 [Thread-0] DEBUG number - 1
+```
