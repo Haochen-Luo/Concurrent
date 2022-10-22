@@ -59,7 +59,7 @@ public class threadJoinDemo {
 ```
 
 不使用join
-```
+```java
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j(topic = "joinDemo")
