@@ -2,14 +2,6 @@
 - 两个线程共享count变量，进行相同数目的count++和count--，预期结果是不变的，但是结果会错误
 - 错误原因: count++和count--并不是原子操作，工作内存修改的值还没有写回main memory里面
 
-
-..
-
-![image](https://user-images.githubusercontent.com/46443218/197335855-cea19ff3-b992-431a-ac75-4316e55fe44e.png)
-
-![image](https://user-images.githubusercontent.com/46443218/197335904-235c3d82-c83b-40cf-a34e-ee5ff7366b29.png)
-
-
 ```java
 public class ObjectLockdemo {
 
@@ -76,3 +68,6 @@ public class ObjectLockdemo {
 }
 
 ```
+![image](https://user-images.githubusercontent.com/46443218/197335855-cea19ff3-b992-431a-ac75-4316e55fe44e.png)
+
+![image](https://user-images.githubusercontent.com/46443218/197335904-235c3d82-c83b-40cf-a34e-ee5ff7366b29.png)
