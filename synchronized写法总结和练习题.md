@@ -85,14 +85,15 @@ class Number{
 
 所以这里的答案是2然后1s后为1（线程2先执行），或者是停1秒然后是2（虽然线程1在休眠但是因为有锁所以t2迟迟不能行动）
 
-
+```
 21:54:53.950 [Thread-0] DEBUG main - begin
 21:54:53.950 [Thread-1] DEBUG main - begin
 21:54:54.967 [Thread-0] DEBUG number - 1
 21:54:54.967 [Thread-1] DEBUG number - 2
-
-
+```
+```
 21:34:50.446 [Thread-1] DEBUG main - begin
 21:34:50.450 [Thread-1] DEBUG number - 2
 21:34:50.446 [Thread-0] DEBUG main - begin
 21:34:51.463 [Thread-0] DEBUG number - 1
+```
