@@ -1,6 +1,7 @@
 ### 经典并发错误及解决
 - 两个线程共享count变量，进行相同数目的count++和count--，预期结果是不变的，但是结果会错误
 - 错误原因: count++和count--并不是原子操作，工作内存修改的值还没有写回main memory里面
+- 加了synchronized,多个线程中会有一个线程A获得进入synchronized代码块的权利，即使发生时间片耗尽轮到别的线程，别的线程进入会被blocked,后面这个线程A又可以轮到并且执行。线程A完成后唤醒其他线程
 
 ```java
 public class ObjectLockdemo {
