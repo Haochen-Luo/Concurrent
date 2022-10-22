@@ -1,3 +1,4 @@
+## Start
 start后会从NEW变成RUNNABLE
 ```java
 public class startDemo {
@@ -20,7 +21,8 @@ startingt1
 ```
 
 
-
+## join
+想要让t1线程完成，就调用t1.join()
 使用join
 ```java
 import lombok.extern.slf4j.Slf4j;
