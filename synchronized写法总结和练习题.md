@@ -41,7 +41,7 @@ class Test{
 
 
 ## 练习题
-
+### 情况一
 ```java
 
 
@@ -102,4 +102,70 @@ class Number{
 21:56:37.849 [Thread-0] DEBUG main - begin
 21:56:37.853 [Thread-1] DEBUG number - 2
 21:56:38.861 [Thread-0] DEBUG number - 1
+```
+
+### 情况二
+这里Number1的a()是锁类对象，而b()中锁的是对象number12，所以不存在加锁。又因为1有sleep,所以运行结果永远是2先1后
+```java
+Number1 number11 = new Number1();
+        Number1 number12 = new Number1();
+        new Thread(()->{
+            log.debug("begin");
+            try {
+                number11.a();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+        new Thread(()->{
+            log.debug("begin");
+            number12.b();
+        }).start();
+
+@Slf4j(topic = "case1")
+class Number1{
+    public static synchronized  void a() throws InterruptedException {
+        Thread.sleep(1000);
+        log.debug("1");
+    }
+    public synchronized void b() {
+
+        log.debug("2");
+    }
+
+}
+```
+
+### 情况三
+这里n1,n2对应都是Number2的类对象，所以加锁成功。和情形一一样
+```java
+//把main里换成下面这段。
+ Number2 n1 = new Number2();
+        Number2 n2 = new Number2();
+        new Thread(()->{
+            log.debug("begin");
+            try {
+                n1.a();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+        new Thread(()->{
+            log.debug("begin");
+            n2.b();
+        }).start();
+@Slf4j(topic = "number")
+class Number2{
+    public static synchronized void a() throws InterruptedException {
+        Thread.sleep(1000);
+        log.debug("1");
+    }
+    public static synchronized void b() {
+
+        log.debug("2");
+    }
+
+}
 ```
