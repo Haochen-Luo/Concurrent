@@ -156,7 +156,7 @@ class Number1{
             log.debug("begin");
             n2.b();
         }).start();
-@Slf4j(topic = "number")
+@Slf4j(topic = "case2")
 class Number2{
     public static synchronized void a() throws InterruptedException {
         Thread.sleep(1000);
