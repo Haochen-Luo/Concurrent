@@ -58,3 +58,32 @@ thread1
 
 加了synchronized还是无法确保按照顺序执行，因为有可能时间片先给t2
 ![image](https://user-images.githubusercontent.com/46443218/197407729-9e197b60-5aca-4ccc-a7d7-e23fc36817f7.png)
+
+
+使用join可以保证顺序进行
+```java
+
+@Slf4j(topic = "waitDemo")
+public class waitNotifyDemo {
+    static Object lock = new Object();
+    public static void main(String[] args) throws InterruptedException {
+        for(int i =0;i<1000;i++){
+        Thread t1 = new Thread(()->{
+//        synchronized (lock){
+
+            log.debug("| running");
+//        }
+        },"t1");
+        Thread t2 =new Thread(()->{
+//            synchronized (lock){
+                log.debug("- running");
+//            }
+            },"t2");
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+    }
+    }
+}
+```
