@@ -54,3 +54,7 @@ thread3
 thread1
 ```
 可以看到，每次运行程序时，线程的执行顺序可能不同。线程的启动顺序并不能决定线程的执行顺序。
+
+
+加了synchronized还是无法确保按照顺序执行，因为有可能时间片先给t2
+![image](https://user-images.githubusercontent.com/46443218/197407729-9e197b60-5aca-4ccc-a7d7-e23fc36817f7.png)
