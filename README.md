@@ -91,6 +91,7 @@ public class waitNotifyDemo {
 
 线程八锁https://www.bilibili.com/video/BV16J411h7Rd?p=60&vd_source=8d4c66e89257a55f9732ff93790086b8
 
+这里先1后2 或者先 2后1 都有可能,synchronized的作用是互斥,没法推断先后顺序
 ![image](https://user-images.githubusercontent.com/46443218/201550761-3930e79a-aa0f-47f0-8713-526085770ae4.png)
 
 synchronized加在方法上，锁的是this对象
