@@ -87,3 +87,12 @@ public class waitNotifyDemo {
     }
 }
 ```
+
+
+线程八锁
+
+![image](https://user-images.githubusercontent.com/46443218/201550761-3930e79a-aa0f-47f0-8713-526085770ae4.png)
+
+synchronized加在方法上，锁的是this对象
+
+这里先1后2 或者先 2后1 都有可能
