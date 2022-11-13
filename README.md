@@ -98,3 +98,7 @@ synchronized加在方法上，锁的是this对象
 synchronized的作用是互斥，所以后面即使线程1休眠，线程2也会在其休眠时等待
 这里先1后2 或者先 2后1 都有可能
 ![image](https://user-images.githubusercontent.com/46443218/201551043-27d35f6e-5fcc-4868-ab7a-9152ca55c1cf.png)
+
+这种就是加在不同的对象上，没有互斥的作用，因为线程1的休眠，所以总是线程2执行优先
+![image](https://user-images.githubusercontent.com/46443218/201551314-40e13eeb-e12b-4770-ac87-cddd598ec77a.png)
+
